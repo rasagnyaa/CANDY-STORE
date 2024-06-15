@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  a{
+    background-color: goldenrod;
+  }
+</style>
+<body>
+  <nav>
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Menu</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Login</a></li>
+      <li><a href="">Register</a></li>
+      <li id="li5"><a href="">add to cart</a></li>
+    </ul>
+  </nav>
+  <!-- //Each candy has a dedicated page displaying detailed information such as the candy description,
+    ingredients, price, reviews, and ratings.
+    Users can view related candies based on type and flavor. chocolates, gummies, lollipops, and more. -->
+  <script>
+    var data = [
+      {
+        title: "Tangy imli",
+        image: "../candystore/images/p1.webp",
+        description:
+          "GO DESi Popz Imli Pop, Tamarind & Jaggery Candy, 50 Pieces, Tangy Imli,Imli Candy Lollipop,Digestive Candy,400g",
+        ingredients:
+          "ingredients : Tamarind,edible salt,cumin powder,curry leaves powder,chilli powdwe refined sunflower,oil,acacia gum(ins 414)",
+        price: 249,
+        ratings: 3.9,
+      },
+      {
+        title: "Pulse Litchi Fruit Candy",
+        image:
+          "https://m.media-amazon.com/images/I/612Oh5AywiL._AC_UL480_FMwebp_QL65_.jpg",
+        description:
+          "Pulse Litchi Fruit Candy 190 Gram/209 Gram/220 Gram (Weight May Vary)",
+        ingredients:
+          " ingredients : sugar liquid glucose dextrose candy masala(2%) edible common salt,spices,condiments ascidity regulators",
+        price: 60,
+        ratings: 3.9,
+      },
+      {
+        title: "Combo pack of Orange Candy & Chatpata Masala Candy",
+        image:
+          "https://m.media-amazon.com/images/I/61yFeL9XISL._AC_UL480_FMwebp_QL65_.jpg",
+        description:
+          "Hoots Candy Combo Pack Of Of Orange Candy & Chatpata Masala Candy Combined Weight 360 Grams Ii Flavoured Sugar Candyii Sweet & Chatpata Candy Pack 2Ii",
+        ingredients:
+          "ingredients : sugar liquid glucose,ctric acid artifical flavour and colors",
+        price: 287,
+        ratings: 3.9,
+      },
+      {
+        title: "Alpenlieble Gold",
+        image: "https://m.media-amazon.com/images/I/61FFIrMcvtL._SX522_.jpg",
+        description:
+          "Alpenliebe Gold, Cream Strawberry Candy Pouch, 152 g, 40 pc",
+        ingredients:
+          "ingredients : sugar liquid glucose, hydrogenated vegitabale oil,ctric acid artifical flavour and colors",
+        price: 50,
+        ratings: 4.4,
+      },
+      {
+        title: "Kitchen Jungle Imli",
+        image: "https://m.media-amazon.com/images/I/61iGWTGF-gL._SY550_.jpg",
+        description:
+          "Kitchen Jungle Imli Candy 400gm, Khatti Meethi Imly, Chulbuli Emli Tamarind Twist Candy, Twisted Emly Candy jar pack of 1c",
+        ingredients:
+          "ingredients : Curry Leaves Powder Redined Sunflower Oil Cumin Powder Edible Salt Chili Powder Jaggery Tamarind Stabilizer",
+        price: 169,
+        ratings: 4.2,
+      },
+      {
+        title: "Fox's Crystal Clear Berries",
+        image:
+          "https://m.media-amazon.com/images/I/6100F8H5mXS._AC_UL480_FMwebp_QL65_.jpg",
+        description:
+          "Fox's Crystal Clear Mix Fruit Berry Candy, 6.35 Oz / 180 Grams",
+        ingredients:
+          "ingredients : Curry Leaves Powder Redined Sunflower Oil Cumin Powder Edible Salt Chili Powder Jaggery Tamarind Stabilizer",
+        price: 209,
+        ratings: 4.3,
+      },
+      {
+        title: "HARIBO Goldbears",
+        image:
+          "https://m.media-amazon.com/images/I/617E++t1evL._AC_UL480_FMwebp_QL65_.jpg",
+        description:
+          "HARIBO Candy Share Size Goldbears Gummy (Golden, White, Red, Clear, Strawberry, Pineapple, Orange, Raspberry, Lemon, 160 grams)",
+        ingredients:
+          "ingredients : Glucose syrup,sugar gelatine fruit juice Curry Leaves Powder Redined Sunflower Oil Cumin Powder Edible Salt Chili Powder Jaggery Tamarind Stabilizer",
+        price: 170,
+        ratings: 4.1,
+      },
+      {
+        title: "Eyeball Candy",
+        image:
+          "https://m.media-amazon.com/images/I/618PTKqX03L._AC_UL480_FMwebp_QL65_.jpg",
+        description:
+          "CandiExotics 3D Bursting Eyeball Mixed Fruits Flavour Candy | Center Filled Gummy Candy | Spooky Halloween Jelly Balls - Jelly Candy 11Gm*15Pcs",
+        ingredients:
+          "ingredients : fruits Glucose syrup,sugar gelatine fruit juice Curry Leaves Powder Redined Sunflower Oil Cumin Powder Edible Salt Chili Powder Jaggery Tamarind Stabilize",
+        price: 239,
+        ratings: 2.9,
+      },
+      {
+        title: "Thai Chew Mango",
+        image:
+          "https://m.media-amazon.com/images/I/61fzdLIoCFL._AC_UL480_FMwebp_QL65_.jpg",
+        description: "Haoliyuan Thai Chew Mango Flavored Candy 350gm",
+        ingredients:
+          "ingredients : Mango fruits Glucose syrup,sugar gelatine fruit juice Curry Leaves Powder Redined Sunflower Oil Cumin Powder Edible Salt Chili Powder Jaggery  Stabilize",
+        price: 219,
+        ratings: 4.3,
+      },
+      {
+        tile: "Poppins",
+        image: "https://m.media-amazon.com/images/I/71FNdWz64HL._SX522_.jpg",
+        description: "Parle Mazelo Poppins, Fruit, 12.6g",
+        ingredients:
+          "ingredients : sugar liquid glucose,ctric acid artifical flavour and colors",
+        price: 10,
+        ratings: 3.4,
+      },
+      {
+        title: "JUSTONE Swiss Jellys",
+        image:
+          "https://m.media-amazon.com/images/I/71GwJT3LGxL._AC_UL480_FMwebp_QL65_.jpg",
+        description:
+          "JUSTONE Swiss Jelly Mixed Fruit Soft Jelly Candy CUBES 500 Gms - SOFT JELLY Bites JUJUBE COMBO PACK of 2 ( 250 gms x 2)",
+        ingredients:
+          "ingredients : sugar liquid glucose,ctric acid artifical flavour and colors",
+        price: 299,
+        ratings: 3.9,
+      },
+      {
+        title: "Honey Ginger Amla Candy",
+        image:
+          "https://m.media-amazon.com/images/I/81qmagSXxOL._AC_UL480_FMwebp_QL65_.jpg",
+        description:
+          "cravez Dried Honey Ginger Amla Candy - 300Gm|Export Quality Amla|Adarak Amla|Low Processed And Sugar Free Amla, For Weight Loss And Immunity Booster|Natural|No Artificial Colour Used (Amla)",
+        ingredients: "ingredients : Honey Ginger Handpicked Raw Amla",
+        price: 299,
+        ratings: 4.9,
+      },
+      {
+        title: "Nerds",
+        image:
+          "https://m.media-amazon.com/images/I/91YL2kTT-1L._AC_UL480_FMwebp_QL65_.jpg",
+        description:
+          "Wonka for The Love of Nerds Gotta Have Grape & Seriously Strawberry Candy, 141 g",
+        ingredients:
+          "ingredients : sugar liquid glucose,ctric acid artifical flavour and colors",
+        price: 299,
+        ratings: 4.5,
+      },
+      {
+        title: "KOPIKO",
+        image:
+          "https://m.media-amazon.com/images/I/518weji1jiL._AC_UL480_FMwebp_QL65_.jpg",
+        description:
+          "KOPIKO Cappuccino Coffee Candy - World's No 1 Coffee Candy - Pocket Pack -504 gm |24 Units X 6 Pieces in Each|",
+        ingredients:
+          "ingredients : Liquid Glucose Sugar,Edible Vegetable Oil,Butter(2%),Milk solids (0.8%),Coffe extract(0.5%)",
+        price: 240,
+        ratings: 4.3,
+      },
+      {
+        title: "Chupa Chups Sour Bites",
+        image: "https://m.media-amazon.com/images/I/61bth6aEyfL._SX522_.jpg",
+        description:
+          "Chupa Chups Sour Bites, Mixed Fruit Punch Flavour, Soft & Chewy Toffee, 30 Pc, 61.6 G,62 Grams",
+        ingredients:
+          "ingredients : Liquid Glucose Sugar,Edible Vegetable Oil,Wheat flour",
+        price: 35,
+        ratings: 4.2,
+      },
+      {
+        title: "Hungry Harvest Marshmallows",
+        image: "https://m.media-amazon.com/images/I/71AIMaEio1L._AC_UL480_QL65_.jpg",
+        description:
+          "Hungry Harvest Marshmallows Pure Vegan 50 Pieces Strawberry Vanilla Assorted Fruit Flavours Vegetarian Marshmallow Candy Marshmallow Candy Marshmallows Pure Veg [Jar Pack]",
+        ingredients:
+          "ingredients : Liquid Glucose Sugar,Edible Vegetable Oil,Wheat flour",
+        price: 225,
+        ratings: 3.0,
+      },
+      {
+        title: "Chocolairs Gold",
+        image:
+          "https://m.media-amazon.com/images/I/51SrbdGoyRL._SX300_SY300_QL70_FMwebp_.jpg",
+        description:
+          "Cadbury Choclairs Chocolate Gold Candy, 137 G|25 Pieces - 5.5 Gram Each",
+        ingredients:
+          "ingredients : Liquid Glucose Sugar,Edible Vegetable Oil,Wheat flour",
+        price: 225,
+        ratings: 4.4,
+      },
+      {
+        title: "Rock Candy",
+        image: "https://m.media-amazon.com/images/I/618y1-KM6cL.jpg",
+        description:
+          "ExtraOrdinary Rock Candy - Stone Candy | Milk Stone Chocolate | Rock Shape Chocolate (200 Grams)",
+        ingredients:
+          "ingredients : Liquid Glucose Sugar,Edible Vegetable Oil,Wheat flour",
+        price: 196,
+        ratings: 2.6,
+      },
+      {
+        title: "Just Jelly",
+        image:
+          "https://m.media-amazon.com/images/I/61ZPtnus4EL._AC_UL480_QL65_.jpg",
+        description:
+          "Alpenliebe Juzt Jelly, Guava Flavour, 148 G (40 Units * 3.7 G Each )",
+        ingredients:
+          "ingredients : Liquid Glucose Sugar,Edible Vegetable Oil,Wheat flour",
+        price: 50,
+        ratings: 4.3,
+      },
+      {
+        title: "Groceteria Station Soft Jelly Candy",
+        image: "https://m.media-amazon.com/images/I/51DtN-J4RaL.jpg",
+        description:
+          "Groceteria Station Soft Jelly Candy Jelly Toffee Colourful Jelly Candy | Jelly Chocolate (1 Kilograms)",
+        ingredients:
+          "ingredients : Liquid Glucose Sugar,Edible Vegetable Oil,Wheat flour",
+        price: 399,
+        ratings: 3.5,
+      },
+    ];
+    
+    //////////////////////////////////////////////////////
+    for (i = 0; i <= 19; i++) {
+      let div1 = document.createElement("div");
+      document.body.appendChild(div1);
+
+      div1.setAttribute("class", "class1");
+      div1.style.border = "1px solid lightgray";
+      div1.style.backgroundColor = "lightgray";
+      div1.style.height = "500px";
+      div1.style.width = "400px";
+      div1.style.margin = "5px";
+      div1.style.display = "inline-block";
+      div1.style.marginLeft = "30px";
+      div1.style.borderRadius = "1rem";
+      div1.style.marginTop = "30px"
+      div1.style.boxShadow = "10px 10px 10px lightgray";
+      ///////////////////////////
+      let div2 = document.createElement("div");
+      div1.appendChild(div2);
+      div2.style.border = "1px solid black";
+      div2.style.height = "20px";
+      div2.style.width = "380px";
+      div2.style.margin = "10px";
+      div2.style.marginTop = "5px";
+      div2.style.display = "inline-block";
+      div2.innerHTML = data[i].title;
+      div2.style.textAlign = "center";
+      ////////////image box//////
+      let div3 = document.createElement("div");
+      div1.appendChild(div3);
+      div3.style.border = "1px solid black";
+      div3.style.height = "220px";
+      div3.style.width = "380px";
+      div3.style.margin = "10px";
+      div3.style.display = "inline-block";
+      div3.style.marginTop = "10px";
+      div3.style.position = "absolute";
+
+      ////image///
+      let img1 = document.createElement("img");
+      div3.appendChild(img1);
+      img1.style.height = "200px";
+      img1.style.width = "200px";
+      img1.style.marginLeft = "90px";
+      img1.style.marginTop = "10px";
+      img1.setAttribute("src", data[i].image);
+
+      /////description///
+      let div4 = document.createElement("div");
+      div1.appendChild(div4);
+      div4.style.border = "1px solid black";
+      div4.style.height = "55px";
+      div4.style.width = "380px";
+      div4.style.margin = "10px";
+      div4.style.marginTop = "250px";
+      div4.style.display = "inline-block";
+      div4.innerHTML = data[i].description;
+      div4.style.backgroundColor = "rgb(84, 84, 143)";
+      div4.style.color = "white";
+      div4.style.fontSize = "15px";
+      div4.style.textAlign = "center";
+      div4.style.position = "absolute";
+      ///////////////////////ingredeints
+      let div5 = document.createElement("div");
+      div1.appendChild(div5);
+      div5.style.border = "1px solid black";
+      div5.style.height = "55px";
+      div5.style.width = "380px";
+      div5.style.margin = "10px";
+      div5.style.marginTop = "300px";
+      div5.style.display = "inline-block";
+      div5.innerHTML = data[i].ingredients;
+      div5.style.backgroundColor = "rgb(84, 84, 143)";
+      div5.style.color = "white";
+      div5.style.fontSize = "15px";
+      div5.style.textAlign = "center";
+      div5.style.position = "absolute";
+      /////////price////////////
+      let div6 = document.createElement("div")
+      div1.appendChild(div6)
+      // div6.style.border="1px solid black"
+      div6.style.height = "20px"
+      div6.style.width = "380px"
+      div6.style.margin = "10px"
+      div6.style.display = "inline-block"
+      div6.style.marginTop = "360px"
+      div6.style.position = "absolute"
+      div6.innerHTML = data[i].price
+      div6.style.textAlign = "center"
+      div6.style.fontSize = "30px"
+      //////////////////ruppe symbol////////////////////////////
+      let div7 = document.createElement("div")
+      div1.appendChild(div7)
+      div7.setAttribute("class", "class1")
+      div7.style.border = "1px solid black"
+      div7.style.height = "30px"
+      div7.style.width = "20px"
+      div7.style.margin = "10px"
+      div7.style.display = "inline-block"
+      div7.style.marginTop = "360px"
+      div7.style.position = "absolute"
+      div7.innerHTML = "₹"
+      div7.style.color = "red"
+      div7.style.marginLeft = "150px"
+      div7.style.marginTop = "360px"
+      div7.style.textAlign = "center"
+      div7.style.fontSize = "30px"
+      // div7.style.textAlign="center"
+
+
+      //////////////////rating/////
+      let div8 = document.createElement("div")
+      div1.appendChild(div8)
+
+      div8.style.border = "1px solid green"
+      div8.style.height = "20px"
+      div8.style.width = "90px"
+      div8.style.margin = "10px"
+      div8.style.display = "inline-block"
+
+      div8.style.position = "absolute"
+      div8.innerHTML = data[i].ratings
+      div8.style.backgroundColor = "green"
+      div8.style.color = "white"
+      div8.style.marginLeft = "250px"
+      div8.style.marginTop = "370px"
+      div8.style.textAlign = "center"
+      div8.style.borderRadius = "1rem"
+      // div7.style.textAlign="center"
+     let btn1=document.createElement("button")
+     
+  
+     btn1.innerHTML="Add to cart"
+     div1.appendChild(btn1)
+     btn1.setAttribute("id","addtocart")
+     btn1.style.marginTop="400px"
+     btn1.style.marginLeft="20px"
+     btn1.style.height="40px"
+     btn1.style.width="150px"
+     btn1.style.borderRadius="1rem"
+  btn1.style.backgroundColor="goldenrod"
+     let btn2=document.createElement("button")
+     btn2.innerHTML="Buy now"
+     div1.appendChild(btn2)
+     btn2.style.marginTop="400px"
+     btn2.style.marginLeft="40px"
+     btn2.style.height="40px"
+     btn2.style.width="150px"
+     btn2.style.borderRadius="1rem"
+}
+let addtocart=document.getElementById("addtocart").addEventListener("click",()=>{
+  window.open("../candystore/addtocart.html")
+  
+})
+  </script>
+</body>
+
+</html>

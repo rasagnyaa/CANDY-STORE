@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+/* body{
+    background-image: url(../candystore/images/pexels-cottonbro-4714771.jpg);
+    height: 100px;
+    width: 100%;
+} */
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: rgb(238, 171, 204);
+  }
+body{
+
+height: 50%;
+width: 50%;
+background-image: url(../candystore/images/pexels-cottonbro-4711729.jpg);
+background-position: center;
+background-size: cover;
+padding: 0 7%;
+background-repeat: no-repeat;
+
+}
+*{
+  border-radius: 1rem;
+ 
+}
+#inp1{
+  height: 40px;
+  width: 300px;
+  text-align: center;
+  margin-top: 40px;
+  border: 1px solid gray;
+  font-size: 15px;
+}
+#inp2{
+ 
+    height: 40px;
+  width: 300px;
+  text-align: center;
+  border: 1px solid gray;
+  font-size: 15px;
+} 
+#inp3{
+  font-size: 15px;
+ height: 40px;
+width: 300px;
+text-align: center;
+border: 1px solid gray;
+}
+#inp4{
+  font-size: 15px;
+ height: 40px;
+width: 300px;
+text-align: center;
+border: 1px solid gray;
+}
+#sbt{
+height: 40px;
+width: 150px;
+background-color: rgb(209, 15, 67);
+color: white;
+font-size: 20px;
+border: 1px solid rgb(209, 15, 67);
+border-radius: 1rem;
+
+}
+#div1{
+    border: 1px solid rgba(21, 195, 214, 0.926);
+    height: 500px;
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 20px;
+  text-align: center;
+  background-color: rgba(19, 156, 198, 0.926);
+  box-shadow: 10px 10px 10px 0px rgba(225, 217, 158, 0.926);
+}
+#p1{
+  color: white;
+  font-size: 20px;
+  margin-top: -20px;
+}
+a{
+  color: #0f0fc8;
+  text-decoration: none;
+}
+
+
+
+</style>
+<body>
+  
+    <div id="div1">
+    <form action="">
+      <input type="text" placeholder="Enter your name" id="inp1"><br><br><br>
+      <input type="email"placeholder="Enter your email" id="inp2"/><br><br><br>
+      <input type="number"placeholder="Enter your number" id="inp3"/><br><br><br>
+      <input type="password"placeholder="Enter your password" id="inp4"/><br><br><br>
+      <input type="submit"value="Submit" id="sbt"/><br><br><br>
+    </form>
+    <p id="p1">Already have an account/<a href="../candystore/loginform.html">Login</a></p>
+</div>
+
+   <script>
+ 
+
+    var data=[]
+    document.forms[0].addEventListener("submit",(e)=>{
+    e.preventDefault()
+    var users={
+    username:e.target[0].value,
+    email:e.target[1].value,
+    number:e.target[2].value,
+    password:e.target[3].value
+   }
+  data.push(users)
+
+ e.target[0].value=""
+  e.target[1].value=""
+  e.target[2].value=""
+    e.target[3].value=""
+   let getsbt=document.getElementById("sbt")
+   getsbt.addEventListener("click",()=>{
+    window.open("../candystore/index.html")
+   })
+ })
+
+   </script>
+</body>
+</html>
